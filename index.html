@@ -8,23 +8,23 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-    <div class="card-container">
+    <form class="card-container">
         <!-- Front of the card -->
         <div class="card front">
             <p class="total">TOTAL: $199</p>
             <div class="card-logo"></div>
             <label>CARD NUMBER</label>
-            <input type="text" placeholder="1234 5678 9101 1020">
+            <input type="text" placeholder="1234 5678 9101 1020" name="card-number" required maxlength="16" pattern="^\d{4}(\s?\d{4}){2,4}$">
             
             <label>CARD HOLDER</label>
-            <input type="text" placeholder="John Doe">
+            <input type="text" placeholder="John Doe" name="card-name" required>
             
             <div class="row">
                 <div class="column">
                     <label>EXPIRATION</label>
                     <div class="expiration">
-                        <input type="text" placeholder="MM">
-                        <input type="text" placeholder="YY">
+                        <input type="text" placeholder="MM" name="month" required minlength="0" maxlength="2">
+                        <input type="text" placeholder="YY" name="year" required minlength="0" maxlength="2">
                     </div>
                 </div>
             </div>
@@ -35,11 +35,11 @@
             <div class="black-bar"></div>
             <div class="cvc-section">
                 <label>CVC/CVV</label>
-                <input type="text" placeholder="XXX">
+                <input type="text" placeholder="XXX" name="CVV" required minlength="0" maxlength="3">
             </div>
-            <button class="submit-btn">Submit</button>
+            <button class="submit-btn" type="submit">Submit</button>
         </div>
-    </div>
+    </form>
 
     
 </body>
